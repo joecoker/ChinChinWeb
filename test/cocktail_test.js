@@ -14,6 +14,20 @@ describe('Cocktail', function() {
       expect(cocktailList).to.include("Harvey Wallbanger");
 
     });
+  });
+
+  describe('#viewDetails', function() {
+
+    it('returns the cocktails details', async function() {
+
+      let recipe = await Cocktail.viewDetails("Vesper");
+
+      expect(recipe.glass).equal("martini");
+      expect(recipe.preparation).equal("Shake and strain into a chilled cocktail glass.")
+
+    });
+  });
+
     //
     // it('includes special ingredients', async function() {
     //
@@ -35,7 +49,5 @@ describe('Cocktail', function() {
     //   expect(tuxedo.ingredients).to.include(["Vermouth", "Dry vermouth"]);
     //
     // });
-
-  });
 
 });

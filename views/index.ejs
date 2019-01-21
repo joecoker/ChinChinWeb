@@ -7,7 +7,9 @@
   </head>
   <body>
     <% cocktailList.forEach(function(cocktail) { %>
-      <li><%= cocktail %></li>
+      <li>
+        <a href="/cocktail/<%= cocktail %>"><%= cocktail %></a>
+      </li>
     <% }); %>
   </body>
 </html>

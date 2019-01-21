@@ -28,7 +28,21 @@ describe('Cocktail', function() {
     });
   });
 
-    //
+  describe('#findByIngredient', function() {
+
+    it('lists recipes containing the specified ingredient', async function() {
+
+      let cocktailList = await Cocktail.findByIngredient('Champagne');
+
+      expect(cocktailList).to.include("Mimosa");
+      expect(cocktailList).to.include("French 75");
+      expect(cocktailList).to.include("Champagne Cocktail");
+
+    });
+
+  });
+
+
     // it('includes special ingredients', async function() {
     //
     //   let cocktailList = await Cocktail.listAll();

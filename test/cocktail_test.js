@@ -40,6 +40,24 @@ describe('Cocktail', function() {
 
     });
 
+    it('matches partial text', async function() {
+
+      let cocktailList = await Cocktail.findByIngredient('rum');
+
+      expect(cocktailList).to.include("Planter's Punch"); //Dark rum
+      expect(cocktailList).to.include("Long Island Iced Tea"); //White rum
+
+    });
+
+    it('is case insensitive', async function() {
+
+      let cocktailList = await Cocktail.findByIngredient('RUM');
+
+      expect(cocktailList).to.include("Planter's Punch");
+      expect(cocktailList).to.include("Long Island Iced Tea");
+
+    });
+
   });
 
 
